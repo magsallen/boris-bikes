@@ -29,10 +29,12 @@ describe DockingStation do
 		expect(subject.dock(bike)).to eq([bike])
 	end
 
-	it 'should initialize with a default capacity of 20' do  
-		sub = DockingStation.new
-		expect(sub.capacity).to eq(DockingStation::DEFAULT_CAPACITY)
+	it 'should initialize with a default capacity of 20' do
+		expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+	end
+
+	it 'should initialize with the capacity you pass in' do
+		station = DockingStation.new(10)
+		expect(station.capacity).to eq 10
 	end
 end
-
-
