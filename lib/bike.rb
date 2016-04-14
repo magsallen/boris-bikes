@@ -1,5 +1,11 @@
 class Bike
-	def working?
-		true
+
+	def report_broken
+		return false
 	end
-end
+
+	def working?
+		return true unless report_broken
+	end
+
+end 

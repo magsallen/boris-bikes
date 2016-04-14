@@ -37,4 +37,10 @@ describe DockingStation do
 		station = DockingStation.new(10)
 		expect(station.capacity).to eq 10
 	end
+
+	it 'should be report a bike as broken' do  
+		expect(bike.report_broken).to eq false
+	end
+
+
 end

@@ -20,6 +20,8 @@ DEFAULT_CAPACITY = 20
 		@array_of_bikes << bike
 	end
 
+	def report_broken
+	end	
 
 	private
 
