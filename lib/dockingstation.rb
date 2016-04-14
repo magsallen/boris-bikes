@@ -12,6 +12,7 @@ DEFAULT_CAPACITY = 20
 
 	def release_bike
 		raise "Station empty" if empty?
+		raise "Can't release a broken bike" if @array_of_bikes.last.working? == false
 		@array_of_bikes.pop
 	end
 
@@ -19,9 +20,6 @@ DEFAULT_CAPACITY = 20
 		raise "Station full" if full?
 		@array_of_bikes << bike
 	end
-
-	def report_broken
-	end	
 
 	private
 

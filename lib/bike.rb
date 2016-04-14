@@ -1,11 +1,16 @@
+require_relative 'dockingstation'
+
 class Bike
 
+	def initialize
+		@working = true
+	end
+
 	def report_broken
-		return false
+		@working = false
 	end
 
 	def working?
-		return true unless report_broken
+		@working
 	end
-
-end 
+end

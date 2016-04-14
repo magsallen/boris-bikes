@@ -1,4 +1,5 @@
 require 'dockingstation'
+require 'bike'
 
 #SUBJECT IS AN INSTANCE OF WHAT YOU DESCRIBE
 describe DockingStation do
@@ -38,9 +39,13 @@ describe DockingStation do
 		expect(station.capacity).to eq 10
 	end
 
-	it 'should be report a bike as broken' do  
+	it 'should be report a bike as broken' do
 		expect(bike.report_broken).to eq false
 	end
 
-
+	it 'should not release broken bikes' do
+		bike.report_broken
+	  subject.dock(bike)
+		expect{subject.release_bike}.to raise_error("Can't release a broken bike")
+	end
 end
